@@ -1,6 +1,5 @@
 import CinematicParticles from "../components/CinematicParticles/CinematicParticles";
 import HeroContent from "../components/HeroContent";
-import ScrollIndicator from "../components/ScrollIndicator";
 import Navbar from "../components/Navbar";
 import AboutSection from "../components/AboutSection";
 import ProjectsSection from "../components/ProjectsSection";
@@ -19,10 +18,10 @@ export default function Home() {
       <Navbar />
 
       {/* Hero Landing */}
-      <section style={{ position: "relative", height: "100vh", overflow: "hidden" }}>
+      <section style={{ position: "relative", height: "100dvh", overflow: "hidden" }}>
         <CinematicParticles />
         <HeroContent />
-        <ScrollIndicator />
+        {/* ScrollIndicator removed — HeroContent has its own scroll hint */}
       </section>
 
       {/* About Section */}

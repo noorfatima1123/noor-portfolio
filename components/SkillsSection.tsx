@@ -13,11 +13,15 @@ const skillCategories = [
   },
   {
     title: "AI / GenAI",
-    skills: ["LLM APIs", "RAG Pipelines", "FAISS", "Sentence Transformers", "Prompt Engineering", "Gemini API", "OpenAI API"],
+    skills: ["LLM APIs", "Claude API", "Gemini API", "OpenAI API", "RAG Pipelines", "Prompt Engineering"],
   },
   {
     title: "ML / NLP",
     skills: ["TF-IDF", "KeyBERT", "Cosine Similarity", "Semantic Matching", "Voice Analysis", "Sentiment Analysis", "Scikit-learn"],
+  },
+  {
+    title: "Vector & Search",
+    skills: ["FAISS", "ChromaDB", "Sentence Transformers", "Azure AI Search", "Semantic Ranking"],
   },
   {
     title: "Mobile Dev",
@@ -25,19 +29,23 @@ const skillCategories = [
   },
   {
     title: "Backend",
-    skills: ["FastAPI", "PostgreSQL", "MongoDB", "SQLAlchemy", "Motor (async)", "REST APIs"],
+    skills: ["FastAPI", "PostgreSQL", "MongoDB", "SQLAlchemy", "Motor (async)", "REST APIs", "SMTP"],
   },
   {
     title: "Frontend",
-    skills: ["React", "TypeScript", "Vite", "Tailwind CSS", "Framer Motion", "Next.js"],
+    skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Chart.js", "GSAP", "Three.js"],
   },
   {
     title: "IoT / Hardware",
     skills: ["ESP32", "MAX30102", "DHT11", "GSR", "AD8232", "MPU6050"],
   },
   {
-    title: "Tools & Research",
-    skills: ["Git", "GitHub", "VS Code", "Postman", "SPSS", "NVivo", "Academic Writing"],
+    title: "Integrations",
+    skills: ["Slack API", "Vercel", "Git", "GitHub", "VS Code", "Postman"],
+  },
+  {
+    title: "Research & Data",
+    skills: ["SPSS", "NVivo", "Academic Writing", "Kaggle Datasets", "Data Analysis"],
   },
 ];
 
@@ -94,7 +102,6 @@ const SkillsSection = () => {
         alignItems: "center",
       }}
     >
-      {/* Heading */}
       <h2
         className="skills-heading"
         style={{
@@ -120,7 +127,6 @@ const SkillsSection = () => {
         Technologies & tools I work with
       </p>
 
-      {/* Skills Grid */}
       <div
         className="skills-grid"
         style={{
@@ -151,7 +157,6 @@ const SkillsSection = () => {
               e.currentTarget.style.background = "rgba(255,255,255,0.015)";
             }}
           >
-            {/* Category Title */}
             <h3
               style={{
                 fontSize: "1rem",
@@ -165,14 +170,7 @@ const SkillsSection = () => {
               {category.title}
             </h3>
 
-            {/* Skill Pills */}
-            <div
-              style={{
-                display: "flex",
-                flexWrap: "wrap",
-                gap: "0.5rem",
-              }}
-            >
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
               {category.skills.map((skill) => (
                 <span
                   key={skill}
@@ -205,6 +203,18 @@ const SkillsSection = () => {
           </div>
         ))}
       </div>
+
+      <style>{`
+        @media (max-width: 768px) {
+          .skills-grid {
+            grid-template-columns: 1fr !important;
+            gap: 1rem !important;
+          }
+          .skill-category {
+            padding: 1.2rem !important;
+          }
+        }
+      `}</style>
     </section>
   );
 };
